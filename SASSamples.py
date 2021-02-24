@@ -6,8 +6,9 @@ from azure.storage.filedatalake import DataLakeServiceClient, FileSystemSasPermi
 
 class SASSamples(object):
 
-    ACCOUNT_NAME = "silambstoragetests"
-    ACCOUNT_KEY = "jrW2UFD4iSKVf/jlghdDVwmlrNed0WLBReLJOYB6Mmoi6ZyaVQVTRoiSljk5T+pF/6ei46xgz9mlPu5N1b2cJg=="
+    ACCOUNT_NAME = "<ACCOUNT NAME FROM AZURE PORTAL>"
+    ACCOUNT_KEY = "<ACCESS KEY FROM AZURE PORTAL>"
+    
     STORAGE_FILESYSTEM = "demo-filesystem-euclideon"
     STORAGE_URL = "https://{}.dfs.core.windows.net".format(ACCOUNT_NAME)
 
