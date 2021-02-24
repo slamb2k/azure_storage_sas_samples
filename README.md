@@ -12,6 +12,24 @@ Just playing around with Azure Storage Service SAS
 
 Using the Azure Storage Python SDK, the following examples are implemented:
 
+```
+Generating SAS for directory: demo-folder-allowed
+
+Reading contents...
+demo-folder-allowed/upload_210225_094344
+demo-folder-allowed/upload_210225_094351
+demo-folder-allowed/upload_210225_094357
+
+Generating SAS for directory: demo-folder-allowed
+
+Uploading upload_210225_094402 to directory: demo-folder-allowed
+Upload complete. Re-downloading file...
+Downloaded file. Bytes read: 204800
+
+Uploading upload_210225_094403 to directory: demo-folder-restricted
+Upload failed.
+```
+
 1. Generates a SAS token for a specific directory and lists the contents
 
 ```

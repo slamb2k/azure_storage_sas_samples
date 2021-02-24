@@ -8,8 +8,8 @@ class SASSamples(object):
 
     ACCOUNT_NAME = "<ACCOUNT NAME FROM AZURE PORTAL>"
     ACCOUNT_KEY = "<ACCESS KEY FROM AZURE PORTAL>"
-    
-    STORAGE_FILESYSTEM = "demo-filesystem-euclideon"
+
+    STORAGE_FILESYSTEM = "demo-filesystem"
     STORAGE_URL = "https://{}.dfs.core.windows.net".format(ACCOUNT_NAME)
 
     def get_random_bytes(self, size):
@@ -20,7 +20,7 @@ class SASSamples(object):
         return bytes(result)
 
     def test_using_directory_sas_to_read(self):
-        storage_directory = "demo-folder-euclideon"
+        storage_directory = "demo-folder-allowed"
 
         print("\nGenerating SAS for directory: {}".format(storage_directory))
         
@@ -46,7 +46,7 @@ class SASSamples(object):
 
 
     def test_upload_download_data(self):
-        registered_path = "demo-folder-euclideon"
+        registered_path = "demo-folder-allowed"
         invalid_path = "demo-folder-restricted"
 
         print("\nGenerating SAS for directory: {}".format(registered_path))
@@ -63,19 +63,19 @@ class SASSamples(object):
 
         # Try with a path that matches the SAS token
         try:
-            self.inner_upload(registered_path, token)
+            self.inner_transfer(registered_path, token)
         except:
             print("Upload failed.")
 
         # Try with a path that doesnt match the SAS token. Should fail!
         try:
-            self.inner_upload(invalid_path, token)
+            self.inner_transfer(invalid_path, token)
         except:
             print("Upload failed.")   
 
 
 
-    def inner_upload(self, directory, token):
+    def inner_transfer(self, directory, token):
         basename = "upload"
         suffix = datetime.now().strftime("%y%m%d_%H%M%S")
         filename = "_".join([basename, suffix]) 
