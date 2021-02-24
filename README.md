@@ -51,7 +51,7 @@ Upload failed.
 ```
     # Try with a path that matches the SAS token
     try:
-        self.inner_upload(registered_path, token)
+        self.inner_transfer(registered_path, token)
     except:
         print("Upload failed.")
 ```
@@ -63,7 +63,7 @@ Upload failed.
 ```    
     # Try with a path that doesnt match the SAS token. Should fail!
     try:
-        self.inner_upload(invalid_path, token)
+        self.inner_transfer(invalid_path, token)
     except:
         print("Upload failed.")   
 ```
